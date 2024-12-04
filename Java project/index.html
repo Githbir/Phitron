@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        <header>
+            <h1>Bank Management System</h1>
+        </header>
+        <main>
+            <section class="menu">
+                <h2>Select User Type</h2>
+                <button onclick="showAdminMenu()">Admin</button>
+                <button onclick="showUserMenu()">User</button>
+            </section>
+
+            <section id="admin-menu" class="hidden">
+                <h2>Admin Menu</h2>
+                <button onclick="showForm('create-account')">Create Account</button>
+                <button onclick="showForm('delete-account')">Delete Account</button>
+                <button onclick="listAccounts()">List Accounts</button>
+                <button onclick="totalBalance()">Check Total Balance</button>
+                <button onclick="totalLoans()">Check Total Loans</button>
+                <button onclick="toggleLoans()">Enable/Disable Loans</button>
+                <button onclick="bankruptNotice()">Declare Bankruptcy</button>
+                <button onclick="goBack()">Back</button>
+            </section>
+
+            <section id="user-menu" class="hidden">
+                <h2>User Menu</h2>
+                <button onclick="showForm('deposit')">Deposit</button>
+                <button onclick="showForm('withdraw')">Withdraw</button>
+                <button onclick="showForm('check-balance')">Check Balance</button>
+                <button onclick="showForm('transaction-history')">Transaction History</button>
+                <button onclick="showForm('take-loan')">Take Loan</button>
+                <button onclick="showForm('transfer')">Transfer</button>
+                <button onclick="goBack()">Back</button>
+            </section>
+
+            <!-- Forms -->
+            <section id="forms" class="hidden">
+                <div id="create-account" class="form hidden">
+                    <h2>Create Account</h2>
+                    <input type="text" id="name" placeholder="Name">
+                    <input type="email" id="email" placeholder="Email">
+                    <input type="text" id="address" placeholder="Address">
+                    <select id="account-type">
+                        <option value="Savings">Savings</option>
+                        <option value="Current">Current</option>
+                    </select>
+                    <button onclick="submitCreateAccount()">Submit</button>
+                </div>
+
+                <div id="delete-account" class="form hidden">
+                    <h2>Delete Account</h2>
+                    <input type="text" id="delete-account-number" placeholder="Account Number">
+                    <button onclick="submitDeleteAccount()">Submit</button>
+                </div>
+
+                <!-- Add other forms here -->
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
